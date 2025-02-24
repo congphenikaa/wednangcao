@@ -18,7 +18,4 @@
   <!-- bootstrap core css -->
   @vite('resources/css/bootstrap.css')
 
-  <!-- Custom styles for this template -->
-  @vite('resources/css/style.css')
-  <!-- responsive style -->
-  @vite('css/responsive.css')
+  @vite(['resources/css/style.css', 'resources/css/responsive.css'])
