@@ -4,7 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/',[HomeController::class,'home'])->name('index');
+Route::get('/', [HomeController::class, 'home'])->name('index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -16,23 +16,22 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
-Route::get('admin/dashboard',[HomeController::class,'index'])->
-    middleware(['auth','admin']);
+Route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin']);
 
-    Route::get('/shop', function () {
-        return view('shop');
-    })->name('shop');
-    
-    Route::get('/why', function () {
-        return view('why');
-    })->name('why');
-    
-    Route::get('/testimonial', function () {
-        return view('testimonial');
-    })->name('testimonial');
-    
-    Route::get('/contact', function () {
-        return view('contact');
-    })->name('contact');
+Route::get('/shop', function () {
+    return view('shop');
+})->name('shop');
+
+Route::get('/why', function () {
+    return view('why');
+})->name('why');
+
+Route::get('/testimonial', function () {
+    return view('testimonial');
+})->name('testimonial');
+
+Route::get('/contact', function () {
+    return view('home.contact');
+})->name('contact');
