@@ -11,7 +11,7 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  @vite('resources/images/favicon.png')
+  <link rel="shortcut icon" href="{{asset('images/favicon.png')}}" type="image/x-icon">
 
   <title>
     Giftos
@@ -21,12 +21,12 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
   <!-- bootstrap core css -->
-  @vite('resources/css/bootstrap.css')
+  <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}" />
 
   <!-- Custom styles for this template -->
-  @vite('resources/css/style.css')
+  <link href="{{ asset('css/style.css')}}" rel="stylesheet" />
   <!-- responsive style -->
-  @vite('resources/css/responsive.css')
+  <link href="{{ asset('css/responsive.css')}}" rel="stylesheet" />
 </head>
 
 <body>
@@ -112,7 +112,7 @@
                   </div>
                   <div class="col-md-5 ">
                     <div class="img-box">
-                      <img style="width:600px" src="images/image3.jpeg" alt="" />
+                      <img style="width:600px" src="{{asset('images/image3.jpeg')}}" alt="" />
                     </div>
                   </div>
                 </div>
@@ -143,7 +143,7 @@
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/p1.png" alt="">
+                <img src="{{asset('images/p1.png')}}" alt="">
               </div>
               <div class="detail-box">
                 <h6>
@@ -168,7 +168,7 @@
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/p2.png" alt="">
+                <img src="{{asset('images/p2.png')}}" alt="">
               </div>
               <div class="detail-box">
                 <h6>
@@ -193,7 +193,7 @@
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/p3.png" alt="">
+                <img src="{{asset('images/p3.png')}}" alt="">
               </div>
               <div class="detail-box">
                 <h6>
@@ -218,7 +218,7 @@
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/p4.png" alt="">
+                <img src="{{asset('images/p4.png')}}" alt="">
               </div>
               <div class="detail-box">
                 <h6>
@@ -243,7 +243,7 @@
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/p5.png" alt="">
+                <img src="{{asset('images/p5.png')}}" alt="">
               </div>
               <div class="detail-box">
                 <h6>
@@ -268,7 +268,7 @@
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/p6.png" alt="">
+                <img src="{{asset('images/p6.png')}}" alt="">
               </div>
               <div class="detail-box">
                 <h6>
@@ -293,7 +293,7 @@
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/p7.png" alt="">
+                <img src="{{asset('images/p7.png')}}" alt="">
               </div>
               <div class="detail-box">
                 <h6>
@@ -318,7 +318,7 @@
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/p8.png" alt="">
+                <img src="{{asset('images/p8.png')}}" alt="">
               </div>
               <div class="detail-box">
                 <h6>
@@ -495,11 +495,11 @@
   <!-- end info section -->
 
 
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>
+  <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
+  <script src="{{asset('js/bootstrap.js')}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
-  <script src="js/custom.js"></script>
+  <script src="{{asset('js/custom.js')}}"></script>
 
 </body>
 
