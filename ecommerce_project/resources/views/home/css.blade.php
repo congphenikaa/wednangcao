@@ -19,6 +19,6 @@
   <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}" />
 
   <!-- Custom styles for this template -->
-  <link href="{{asset('css/style.css')}}" rel="stylesheet" />
+  @vite('resources/css/style.css')
   <!-- responsive style -->
-  <link href="{{asset('css/responsive.css')}}" rel="stylesheet" />
+  @vite('css/responsive.css')
