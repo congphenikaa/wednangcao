@@ -10,7 +10,7 @@
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/p1.png" alt="">
+                @vite('resources/images/p1.png')
               </div>
               <div class="detail-box">
                 <h6>
@@ -35,7 +35,7 @@
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/p2.png" alt="">
+              @vite('resources/images/p2.png')
               </div>
               <div class="detail-box">
                 <h6>
@@ -60,7 +60,7 @@
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/p3.png" alt="">
+              @vite('resources/images/p3.png')
               </div>
               <div class="detail-box">
                 <h6>
@@ -85,7 +85,7 @@
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/p4.png" alt="">
+              @vite('resources/images/p4.png')
               </div>
               <div class="detail-box">
                 <h6>
@@ -110,7 +110,7 @@
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/p5.png" alt="">
+              @vite('resources/images/p5.png')
               </div>
               <div class="detail-box">
                 <h6>
@@ -135,7 +135,7 @@
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/p6.png" alt="">
+              @vite('resources/images/p6.png')
               </div>
               <div class="detail-box">
                 <h6>
@@ -160,7 +160,7 @@
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/p7.png" alt="">
+              @vite('resources/images/p7.png')
               </div>
               <div class="detail-box">
                 <h6>
@@ -185,7 +185,7 @@
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/p8.png" alt="">
+              @vite('resources/images/p8.png')
               </div>
               <div class="detail-box">
                 <h6>

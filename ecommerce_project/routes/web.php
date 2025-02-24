@@ -16,5 +16,23 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';
 
+Route::get('admin/dashboard',[HomeController::class,'index'])->
+    middleware(['auth','admin']);
+
+    Route::get('/shop', function () {
+        return view('shop');
+    })->name('shop');
+    
+    Route::get('/why', function () {
+        return view('why');
+    })->name('why');
+    
+    Route::get('/testimonial', function () {
+        return view('testimonial');
+    })->name('testimonial');
+    
+    Route::get('/contact', function () {
+        return view('contact');
+    })->name('contact');
