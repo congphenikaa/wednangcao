@@ -18,20 +18,12 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
-Route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin']);
+Route::get('/admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin']);
 
-Route::get('/shop', function () {
-    return view('shop');
-})->name('shop');
+Route::get('/shop', [HomeController::class, 'shop'])->name('shop');
 
-Route::get('/why', function () {
-    return view('why');
-})->name('why');
+Route::get('/why', [HomeController::class, 'why'])->name('why');
 
-Route::get('/testimonial', function () {
-    return view('testimonial');
-})->name('testimonial');
+Route::get('/testimonial', [HomeController::class, 'testimonial'])->name('testimonial');
 
-Route::get('/contact', function () {
-    return view('home.contact');
-})->name('contact');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');

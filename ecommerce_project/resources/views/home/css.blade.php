@@ -1,4 +1,5 @@
-  <meta charset="utf-8" />
+<!-- Basic -->
+<meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -6,7 +7,7 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  @vite('resources/images/favicon.png')
+  <link rel="shortcut icon" href="{{asset('images/favicon.png')}}" type="image/x-icon">
 
   <title>
     Giftos
@@ -16,6 +17,9 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
   <!-- bootstrap core css -->
-  @vite('resources/css/bootstrap.css')
+  <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}" />
 
-  @vite(['resources/css/style.css', 'resources/css/responsive.css'])
+  <!-- Custom styles for this template -->
+  <link href="{{ asset('css/style.css')}}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{ asset('css/responsive.css')}}" rel="stylesheet" />
