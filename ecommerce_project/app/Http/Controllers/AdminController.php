@@ -17,6 +17,7 @@ class AdminController extends Controller
         $category = new Category;
         $category->category_name = $request->category;
         $category->save();
-        return back()->with('category_added', 'Category has been added successfully!');
+        toastr()->timeOut(5000)->addSuccess('Category added successfully');
+        return redirect()->back();
     }
 }
