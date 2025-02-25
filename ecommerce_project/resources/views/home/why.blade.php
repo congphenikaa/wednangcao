@@ -8,7 +8,7 @@
 <body>
   <div class="hero_area">
     <!-- header section strats -->
-    @include('home.header1')
+    @include('home.header4')
     <!-- end header section -->
   </div>
   <!-- end hero area -->

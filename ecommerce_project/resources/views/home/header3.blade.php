@@ -14,7 +14,7 @@
             <li class="nav-item ">
               <a class="nav-link" href="{{route('index')}}">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="{{route('shop')}}">
                 Shop
               </a>
@@ -24,7 +24,7 @@
                 Why Us
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="{{route('testimonial')}}">
                 Testimonial
               </a>
