@@ -10,13 +10,25 @@ class AdminController extends Controller
     //
     function view_category()
     {
-        return view('admin.category');
+        $data = Category::all();
+
+
+        return view('admin.category',compact('data'));
     }
     function add_category(Request $request)
     {
         $category = new Category;
         $category->category_name = $request->category;
         $category->save();
-        return back()->with('category_added', 'Category has been added successfully!');
+        toastr()->timeOut(5000)->addSuccess('Category added successfully');
+        return redirect()->back();
+    }
+
+    public function delete_category($id){
+        $data = Category::find($id);
+
+        $data->delete();
+        toastr()->timeOut(5000)->addSuccess('Category delete successfully');
+        return redirect()->back();
     }
 }
