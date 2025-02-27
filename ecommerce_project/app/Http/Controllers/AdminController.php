@@ -31,4 +31,22 @@ class AdminController extends Controller
         toastr()->timeOut(5000)->addSuccess('Category delete successfully');
         return redirect()->back();
     }
+
+    public function edit_category($id){
+        $data = Category::find($id);
+
+        return view('admin.edit_category',compact('data'));
+    }
+
+    public function update_category(Request $request, $id){
+        $data = Category::find($id);
+
+        $data->category_name = $request->category;
+
+        $data->save();
+
+        toastr()->timeOut(5000)->addSuccess('Category Update successfully');
+
+        return redirect('/view_category');
+    }
 }
