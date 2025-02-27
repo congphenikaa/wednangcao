@@ -14,7 +14,7 @@
         
         input[type='text']{
             width: 400px;
-            height: 5px;
+            height: 50px;
         }
     </style>
 </head>
@@ -36,10 +36,11 @@
                 <div class="div_deg">
                     
 
-                    <form action="{{url('update_category',$data->id)}}" method="post">
+                    <form action="{{url('update_category',$data->id)}}" method="POST">
+                        @csrf
                         <input type="text" name="category" value="{{$data->category_name}}">
 
-                        <input class="btn btn-primary" type="submit" type="submit" value="Update Category">
+                        <input class="btn btn-primary" type="submit" value="Update Category">
                     </form>
 
                 </div>        
