@@ -72,9 +72,27 @@ class AdminController extends Controller
 
         $data->category = $request->category;
 
+        $image = $request->image;
+
+        if($image){
+            $imagename = time().'.'.$image->getClientOriginalExtension();
+
+            $request->image->move('products',$imagename);
+
+            $data->image = $imagename;
+        }
+
         $data->save();
+
+        toastr()->timeOut(5000)->addSuccess('Products upload successfully');
 
         return redirect()->back();
 
+    }
+
+    public function view_product(){
+        $product = Product::all();
+
+        return view('admin.view_product', compact('product'));
     }
 }
