@@ -28,6 +28,7 @@
         td{
             border: 1px solid skyblue;
             text-align: center;
+            color: white;
         }
 
     </style>
@@ -91,7 +92,18 @@
                         @endforeach
                     
                     </table>
+
+                    
+
                 </div>
+
+                <div class="div_deg">
+
+                    {{$product->onEachSide(1)->links()}}
+
+                </div>
+
+                
 
             </div>
         </div>
