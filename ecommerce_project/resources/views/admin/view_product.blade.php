@@ -31,6 +31,10 @@
             color: white;
         }
 
+        .hidden {
+        display: none;
+    }
+
     </style>
 </head>
 
@@ -63,6 +67,8 @@
                             <th>Quantity</th>
 
                             <th>Image</th>
+
+                            <th>Delete</th>
                         
                         </tr>
 
@@ -72,7 +78,17 @@
 
                             <td>{{$products->title}}</td>
 
-                            <td>{{$products->description}}</td>
+                            <td>
+                                <span id="shortDesc_{{ $products->id }}">
+                                    {!! Str::limit($products->description, 50) !!}
+                                </span>
+                                <span id="fullDesc_{{ $products->id }}" class="hidden">
+                                    {!! $products->description !!}
+                                </span>
+                                <button onclick="toggleDescription('{{ $products->id }}')" id="toggleDesc_{{ $products->id }}" class="text-blue-500 underline">
+                                    Xem thêm
+                                </button>
+                            </td>
 
                             <td>{{$products->category}}</td>
 
@@ -86,6 +102,9 @@
 
                             </td>
                             
+                            <td>
+                                <a class="btn btn-danger" onclick="confirmation(event)" href="{{url('delete_product',$products->id)}}">Delete</a>
+                            </td>
 
                         </tr>
 
@@ -117,6 +136,46 @@
     <script src="{{asset('/admincss/vendor/jquery-validation/jquery.validate.min.js')}}"></script>
     <script src="{{asset('/admincss/js/charts-home.js')}}"></script>
     <script src="{{asset('/admincss/js/front.js')}}"></script>
+    <script>
+    function toggleDescription(id) {
+        let shortDesc = document.getElementById("shortDesc_" + id);
+        let fullDesc = document.getElementById("fullDesc_" + id);
+        let btn = document.getElementById("toggleDesc_" + id);
+
+        if (fullDesc.classList.contains("hidden")) {
+            shortDesc.classList.add("hidden");
+            fullDesc.classList.remove("hidden");
+            btn.textContent = "Thu gọn";
+        } else {
+            shortDesc.classList.remove("hidden");
+            fullDesc.classList.add("hidden");
+            btn.textContent = "Xem thêm";
+        }
+    }
+    </script>
+
+    <script type="text/javascript">
+
+    function confirmation(ev) {
+        ev.preventDefault(); 
+
+        var urlToRedirect = ev.currentTarget.getAttribute('href');
+
+        swal({
+            title: "Are You Sure to Delete This?",
+            text: "This delete will be permanent",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((willDelete) => {
+            if (willDelete) {
+                window.location.href = urlToRedirect;
+            }
+        });
+    }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
