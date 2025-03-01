@@ -5,10 +5,10 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 
-Route::get('/', [HomeController::class, 'home'])->name('index');
+Route::get('/', [HomeController::class, 'home']);
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('home.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -29,11 +29,14 @@ Route::get('add_product', [AdminController::class, 'add_product'])->middleware([
 Route::post('upload_product', [AdminController::class, 'upload_product'])->middleware(['auth', 'admin']);
 Route::get('view_product', [AdminController::class, 'view_product'])->middleware(['auth', 'admin']);
 Route::get('delete_product/{id}', [AdminController::class, 'delete_product'])->middleware(['auth', 'admin']);
+Route::get('update_product/{id}', [AdminController::class, 'update_product'])->middleware(['auth', 'admin']);
+Route::post('edit_product/{id}', [AdminController::class, 'edit_product'])->middleware(['auth', 'admin']);
+Route::get('product_search', [AdminController::class, 'product_search'])->middleware(['auth', 'admin']);
 
-Route::get('/shop', [HomeController::class, 'shop'])->name('shop');
+Route::get('shop', [HomeController::class, 'shop'])->name('shop');
 
-Route::get('/why', [HomeController::class, 'why'])->name('why');
+Route::get('why', [HomeController::class, 'why'])->name('why');
 
-Route::get('/testimonial', [HomeController::class, 'testimonial'])->name('testimonial');
+Route::get('testimonial', [HomeController::class, 'testimonial'])->name('testimonial');
 
-Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('contact', [HomeController::class, 'contact'])->name('contact');
