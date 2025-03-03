@@ -20,11 +20,11 @@
 
   <!-- shop section -->
 
-  @include('home.product1')
+  @include('home.product')
 
   <!-- contact section -->
 
-  @include('home.contact1')
+  @include('home.contact')
 
   <!-- end contact section -->
 

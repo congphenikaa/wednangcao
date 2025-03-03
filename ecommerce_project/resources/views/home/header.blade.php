@@ -1,6 +1,6 @@
 <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href = "{{url('home.index')}}">
+        <a class="navbar-brand" href = "#">
           <span>
             Giftos
           </span>
@@ -12,25 +12,25 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav  ">
             <li class="nav-item active">
-              <a class="nav-link" href="{{url('home.index')}}">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url('shop')}}">
+              <a class="nav-link" href="#">
                 Shop
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url('why')}}">
+              <a class="nav-link" href="#">
                 Why Us
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url('testimonial')}}">
+              <a class="nav-link" href="#">
                 Testimonial
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url('contact')}}">Contact Us</a>
+              <a class="nav-link" href="#">Contact Us</a>
             </li>
           </ul>
           <div class="user_option">
@@ -40,8 +40,9 @@
 
               @auth
 
-              <a href="">
+              <a href="{{url('mycart')}}">
                 <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                [{{$count}}]
               </a>
 
               <form style="padding: 15px" method="POST" action="{{ route('logout') }}">
