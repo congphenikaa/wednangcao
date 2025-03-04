@@ -35,17 +35,56 @@
             margin-bottom: 70px;
             padding: 18px;
         }
+
+        .order_deg {
+            padding-right: 10px;
+            margin-top: -50px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+        }
+
+        .div_gap {
+            margin: 20px;
+        }
     </style>
 </head>
 
 <body>
     <div class="hero_area">
-        <!-- header section strats -->
+        <!-- header section starts -->
         @include('home.header')
         <!-- end header section -->
         <!-- slider section -->
     </div>
     <div class="div_deg">
+
+        <div class="order_deg">
+            <form action="{{ url('confirm_order') }}" method="POST">
+                @csrf
+                <div class="div_gap">
+                    <label>Receiver Name</label>
+                    <input type="text" name="name" value="{{ Auth::user()->name }}">
+                </div>
+
+                <div class="div_gap">
+                    <label>Receiver Address</label>
+                    <textarea name="address">{{ Auth::user()->address }}</textarea>
+                </div>
+
+                <div class="div_gap">
+                    <label>Receiver Phone</label>
+                    <input type="text" name="phone" value="{{ Auth::user()->phone }}">
+                </div>
+
+                <div class="div_gap">
+                    <input class="btn btn-primary" type="submit" value="Place Order">
+                </div>
+            </form>
+        </div>
+
         <table>
             <tr>
                 <th>Product Title</th>
@@ -57,10 +96,12 @@
 
             @foreach($cart as $cart)
             <tr>
-                <td>{{$cart->product->title}}</td>
-                <td>{{$cart->product->price}}</td>
-                <td><img src="/products/{{$cart->product->image}}" width="100"></td>
-                <td><a class="btn btn-danger" href="{{url('delete_cart',$cart->id)}}">Remove</a></td>
+                <td>{{ $cart->product->title }}</td>
+                <td>{{ $cart->product->price }}</td>
+                <td><img src="/products/{{ $cart->product->image }}" width="100"></td>
+                <td>
+                    <a class="btn btn-danger" href="{{ route('delete_cart', $cart->id) }}">Remove</a>
+                </td>
             </tr>
 
             <?php $value = $value + $cart->product->price; ?>
@@ -68,12 +109,10 @@
         </table>
     </div>
     <div class="cart_value">
-        <h3>Total value of cart is: ${{$value}} </h3>
+        <h3>Total value of cart is: ${{ $value }} </h3>
     </div>
-    <!-- end slider section -->
+
     @include('home.footer')
-
-
 
 </body>
 
