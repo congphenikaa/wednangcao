@@ -73,8 +73,8 @@
     <footer class=" footer_section">
       <div class="container">
         <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Web Tech Knowledge</a>
+          &copy; <span id="displayYear"></span> All Rights Reserved By Cong
+          
         </p>
       </div>
     </footer>
